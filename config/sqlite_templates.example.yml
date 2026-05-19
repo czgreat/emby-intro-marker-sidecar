@@ -1,0 +1,25 @@
+adapter: sql_template
+
+# This file is intentionally only an example.
+# Do not turn DRY_RUN off until these statements are adapted to the
+# actual Chapters3 schema dumped from the NAS.
+
+delete_marker_sql: |
+  -- Example only.
+  DELETE FROM Chapters3
+  WHERE ItemId = :item_id
+    AND MarkerType IN (:intro_start_marker, :intro_end_marker);
+
+insert_marker_sql: |
+  -- Example only.
+  INSERT INTO Chapters3 (
+    ItemId,
+    StartPositionTicks,
+    MarkerType,
+    Name
+  ) VALUES (
+    :item_id,
+    :start_ticks,
+    :marker_type,
+    :name
+  );

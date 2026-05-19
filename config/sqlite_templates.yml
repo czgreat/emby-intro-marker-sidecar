@@ -1,0 +1,20 @@
+adapter: sql_template
+
+# Placeholder until the live Chapters3 schema is confirmed on the NAS.
+delete_marker_sql: |
+  DELETE FROM Chapters3
+  WHERE ItemId = :item_id
+    AND MarkerType IN (:intro_start_marker, :intro_end_marker);
+
+insert_marker_sql: |
+  INSERT INTO Chapters3 (
+    ItemId,
+    StartPositionTicks,
+    MarkerType,
+    Name
+  ) VALUES (
+    :item_id,
+    :start_ticks,
+    :marker_type,
+    :name
+  );

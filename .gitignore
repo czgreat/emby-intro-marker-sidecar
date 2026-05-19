@@ -1,0 +1,60 @@
+.env
+!deploy/fnos/.env
+dist/
+test-report/
+.release/
+cache/
+logs/
+work/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# dependencies
+node_modules/
+.venv/
+venv/
+.venv-ci/
+
+# build output
+dist/
+build/
+.next/
+target/
+.gradle/
+
+# runtime data
+data/
+logs/
+uploads/
+media/
+runtime/
+cache/
+work/
+backups/
+reports/
+test-report/
+
+# local config and secrets
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*secret*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

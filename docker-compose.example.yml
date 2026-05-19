@@ -1,0 +1,15 @@
+services:
+  emby-intro-marker:
+    build: .
+    env_file: .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/app/config:ro
+      - ./cache:/var/lib/intro-marker/cache
+      - ./work:/var/lib/intro-marker/work
+      - ./logs:/var/log/intro-marker
+      # Mount your Emby config and media paths explicitly:
+      # - /path/to/emby/config:/emby-config
+      # - /path/to/media:/data/media:ro
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080

@@ -1,0 +1,92 @@
+service:
+  listen_host: 0.0.0.0
+  listen_port: 8080
+  time_zone: Asia/Hong_Kong
+
+emby:
+  base_url: http://localhost:19305/emby
+  api_key_env: EMBY_API_KEY
+  server_id: 1eb152c09c814c62bfeb82f634aa4e73
+  db_path: /emby-config/data/library.db
+  db_table: Chapters3
+
+libraries:
+  include_library_names:
+    - 电视剧
+    - 动漫
+  include_roots:
+    - /data/media
+    - /data/vcb
+  exclude_roots:
+    - /data/bilibili
+  discovery_min_episodes: 3
+  first_phase_focus: anime
+
+schedule:
+  mode: scheduled
+  cron: "30 3 * * *"
+  poll:
+    enabled: true
+    interval_minutes: 30
+  nightly:
+    enabled: true
+    hour: 3
+    minute: 30
+  max_parallel_jobs: 1
+  max_parallel_ffmpeg: 1
+
+detection:
+  strategy: audio_fingerprint
+  min_episode_count: 4
+  min_cluster_episodes: 3
+  min_support_ratio: 0.50
+  similarity_threshold: 0.92
+
+  chapter_heuristic:
+    enabled: false
+    duration_min_seconds: 85
+    duration_max_seconds: 120
+
+  audio:
+    sample_rate: 11025
+    channels: 1
+    fingerprint_window_seconds: 12
+    fingerprint_hop_seconds: 3
+
+  op:
+    enabled: true
+    search_max_seconds: 480
+    min_duration_seconds: 45
+    max_duration_seconds: 150
+    position_tolerance_seconds: 36
+
+  ed:
+    enabled: true
+    search_from_end_seconds: 300
+    min_duration_seconds: 45
+    max_duration_seconds: 150
+    write_as_second_intro_pair: true
+    tail_tolerance_seconds: 45
+
+  refine:
+    blackframe:
+      enabled: true
+      amount: 98
+      threshold: 0.20
+    silence:
+      enabled: true
+      noise_db: -35
+      min_seconds: 0.40
+
+writeback:
+  mode: sqlite_direct
+  dry_run: true
+  backup_before_write: true
+  busy_timeout_ms: 5000
+
+  # Marker mapping for current YAMBY behavior:
+  # pair 1 => OP as IntroStart/IntroEnd
+  # pair 2 => ED as IntroStart/IntroEnd
+  marker_mapping:
+    op_pair_index: 1
+    ed_pair_index: 2
