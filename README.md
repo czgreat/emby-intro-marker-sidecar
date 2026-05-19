@@ -18,6 +18,18 @@ Emby Intro Marker Sidecar talks to the Emby HTTP API, samples local media audio 
 - Provides status, scheduler, runtime, report, and job endpoints
 - Starts safely in dry-run mode
 
+## Who This Is For
+
+- Homelab users with local Emby libraries
+- Operators who want dry-run reports before database writeback
+- Developers extending media-library analysis pipelines
+
+## Not For
+
+- Running against an unbacked-up production database
+- Writing markers before reviewing reports
+- Analyzing media paths the container cannot read
+
 ## Current Public Release
 
 Ready to use:
@@ -100,8 +112,11 @@ curl http://localhost:8080/health
 | Topic | English | Chinese |
 |---|---|---|
 | Deployment | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | [docs/DEPLOYMENT.zh-CN.md](docs/DEPLOYMENT.zh-CN.md) |
+| Usage/API examples | [docs/USAGE_EXAMPLES.md](docs/USAGE_EXAMPLES.md) | [docs/USAGE_EXAMPLES.zh-CN.md](docs/USAGE_EXAMPLES.zh-CN.md) |
+| Screenshots | [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md) | [docs/SCREENSHOTS.zh-CN.md](docs/SCREENSHOTS.zh-CN.md) |
 | AI handoff | [docs/AI_HANDOFF.md](docs/AI_HANDOFF.md) | [docs/AI_HANDOFF.zh-CN.md](docs/AI_HANDOFF.zh-CN.md) |
 | Roadmap | [docs/ROADMAP.md](docs/ROADMAP.md) | [docs/ROADMAP.zh-CN.md](docs/ROADMAP.zh-CN.md) |
+| Changelog | [CHANGELOG.md](CHANGELOG.md) | [CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md) |
 
 ## AI-Assisted Development
 

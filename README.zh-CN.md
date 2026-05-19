@@ -18,6 +18,18 @@ Emby Intro Marker Sidecar 会通过 Emby HTTP API 读取媒体库信息，用 ff
 - 提供状态、调度、运行时、报告和任务接口
 - 默认建议以 dry-run 模式启动
 
+## 适合谁
+
+- 拥有本地 Emby 媒体库的家庭服务器用户
+- 希望写数据库前先看 dry-run 报告的运维者
+- 扩展媒体库分析流程的开发者
+
+## 不适合
+
+- 直接操作未备份的生产数据库
+- 未复核报告就写入标记
+- 分析容器无权读取的媒体路径
+
 ## 当前公开版状态
 
 已经可以使用：
@@ -100,8 +112,11 @@ curl http://localhost:8080/health
 | 主题 | 中文 | English |
 |---|---|---|
 | 部署 | [docs/DEPLOYMENT.zh-CN.md](docs/DEPLOYMENT.zh-CN.md) | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) |
+| 使用/API 示例 | [docs/USAGE_EXAMPLES.zh-CN.md](docs/USAGE_EXAMPLES.zh-CN.md) | [docs/USAGE_EXAMPLES.md](docs/USAGE_EXAMPLES.md) |
+| 截图 | [docs/SCREENSHOTS.zh-CN.md](docs/SCREENSHOTS.zh-CN.md) | [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md) |
 | AI 接手 | [docs/AI_HANDOFF.zh-CN.md](docs/AI_HANDOFF.zh-CN.md) | [docs/AI_HANDOFF.md](docs/AI_HANDOFF.md) |
 | 路线图 | [docs/ROADMAP.zh-CN.md](docs/ROADMAP.zh-CN.md) | [docs/ROADMAP.md](docs/ROADMAP.md) |
+| 更新日志 | [CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md) | [CHANGELOG.md](CHANGELOG.md) |
 
 ## AI 辅助开发说明
 

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security policy
+    url: ./security/policy
+    about: Please review SECURITY.md before reporting security issues.
