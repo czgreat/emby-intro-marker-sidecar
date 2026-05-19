@@ -1,32 +1,38 @@
 # Roadmap
 
-This public release is a cleaned, source-focused baseline. It is intended to be usable by developers, but each deployment still needs local configuration.
+**Language:** English | [中文](ROADMAP.zh-CN.md)
 
-## Complete enough to use
+This roadmap describes the public repository state for `emby-intro-marker-sidecar`. It separates what is ready to use from what each user should complete in their own environment.
 
-- FastAPI service can run locally or in Docker
-- Dry-run workflow is available before database writes
-- Configuration is example-driven via .env and config YAML
-- Health endpoint is available
+## Complete Enough To Use
 
-## Needs local completion
+- Dry-run detection
+- Report review workflow
+- Optional explicit writeback path
 
-- A reachable Emby server
-- An Emby API key
-- Read-only media mounts
-- A backed-up Emby SQLite database before enabling writeback
-- ffmpeg available in the runtime image or host
+## Needs Local Completion
 
-## Suggested improvements
+- Tune detector thresholds for your media library
+- Verify SQLite table/template compatibility for your Emby version
+- Add integration tests against a disposable fixture database
 
-- Adapt volume mounts for a specific NAS layout
-- Add support for another marker backend
-- Tune fingerprint thresholds for a media library
-- Add a dry-run report UI
+## Suggested Improvements
 
-## Documentation still worth adding
+- Add fixture-based detector tests
+- Improve report explanations and confidence scores
+- Add safe migration checks before writeback
+- Document deployment examples for different Emby layouts
 
-- Real screenshots or short demo videos.
-- A known-good production deployment example for a generic Linux host.
-- Troubleshooting notes collected from real user deployments.
+## Documentation Still Worth Adding
 
+- Screenshots or short screen recordings using non-private demo data.
+- A fuller API example page for common requests and responses.
+- Backup and restore notes for any persistent data path.
+- A troubleshooting page based on real public issues once users start deploying it.
+
+## Maintenance Notes
+
+- Keep public examples generic.
+- Keep English and Chinese instructions aligned.
+- Prefer small issues and pull requests so AI-assisted contributors can work safely.
+- Re-run sensitive-data scans before publishing new releases.
