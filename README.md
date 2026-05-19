@@ -70,3 +70,9 @@ python -m compileall app
 
 MIT
 
+## More documentation
+
+- [Deployment guide](docs/DEPLOYMENT.md)
+- [AI handoff guide](docs/AI_HANDOFF.md)
+- [Roadmap](docs/ROADMAP.md)
+
